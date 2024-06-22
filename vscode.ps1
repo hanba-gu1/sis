@@ -1,0 +1,1 @@
+start-process powershell -ArgumentList "./VSCode/vscode_setup.ps1"

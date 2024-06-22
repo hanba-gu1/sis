@@ -1,0 +1,50 @@
+{
+	"proxy": {
+		"flag": true,
+		"setting_path": "C:/Users/user/Downloads/sis_temp/proxy"
+	},
+	"szip": {
+		"installer_move_path": "C:/Users/user/Downloads/sis_temp/7zip"
+	},
+	"taskber": {
+		"position": 0
+	},
+	"desktop": {
+		"flag": true,
+		"image_path": "U:/desktop.png"
+	},
+	"vscode": {
+		"flag": true,
+		"auto_install": true,
+		"installer_path": "C:/Users/user/Downloads/sis_temp/VSCode",
+		"datadir_path": "U:/SiS_data/VSCode"
+	},
+	"googlechrome": {
+		"flag": true,
+		"datadir_path": "U:/SiS_data/GoogleChrome",
+		"cachedir_path": "C:/Users/user/Downloads/sis_temp/GoogleChrome"
+	},
+	"gcc": {
+		"flag": true,
+		"compiler_path": "C:/Users/user/Downloads/sis_temp/GCC"
+	},
+	"git": {
+		"flag": true,
+		"installer_move_path": "C:/Users/user/Downloads/sis_temp/git",
+		"username": "hanba-gu1",
+		"email": "reinlein.k.smile14@gmail.com"
+	},
+	"php": {
+		"flag": true,
+		"path": "C:/Users/user/Downloads/sis_temp/php"
+	},
+	"python": {
+		"flag": false
+	},
+	"nodejs": {
+		"flag": true
+	},
+	"rust": {
+		"flag": true
+	}
+}

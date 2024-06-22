@@ -1,0 +1,1 @@
+$env:path = [System.Environment]::GetEnvironmentVariable("Path", "User")

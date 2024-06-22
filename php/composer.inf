@@ -1,0 +1,9 @@
+[Setup]
+Lang=default
+Dir=C:\Users\user\composer
+Group=(Default)
+NoIcons=0
+Tasks=
+[params]
+DEV=C:\Users\user\composer
+PHP=C:\Users\user\Downloads\sis_temp\php\php.exe
