@@ -8,7 +8,9 @@ if (!(Test-Path $vscode.datadir_path)) {
 
 if($vscode.auto_install) {
 	New-Item $vscode.installer_path -ItemType Directory
+	$ProgressPreference = 'SilentlyContinue'
 	Invoke-WebRequest "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user" -OutFile "$($vscode.installer_path)/vscode-installer.exe"
+	$ProgressPreference = 'Continue'
 
 	Invoke-Expression "$($vscode.installer_path)/vscode-installer.exe /SILENT /MERGETASKS=!runcode"
 }
