@@ -43,8 +43,5 @@
 	},
 	"nodejs": {
 		"flag": false
-	},
-	"rust": {
-		"flag": false
 	}
 }
