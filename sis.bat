@@ -1,6 +1,3 @@
-U:
-cd U:\SiS
-
 @REM powershell実行ポリシー変更
 powershell Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 

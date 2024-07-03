@@ -1,11 +1,11 @@
-$jsonData = (Get-Content "U:\SiS\setting.json" | ConvertFrom-Json)
-$installer_path = $jsonData.szip.installer_path
+$install_link = "https://www.7-zip.org/a/7z2407-x64.exe"
 
-New-Item $installer_path -ItemType Directory
+$temp_dir = "$env:TEMP_DIR/7zip"
+if (-not (Test-Path $temp_dir)) {
+    mkdir $temp_dir
+}
 
 $ProgressPreference = 'SilentlyContinue'
-Invoke-WebRequest "https://www.7-zip.org/a/7z2407-x64.exe" -OutFile $installer_path/7z2301-x64.exe
+Invoke-WebRequest $install_link -OutFile "$temp_dir/7zinstaller.exe"
 
-Invoke-Expression "$installer_path/7z2301-x64.exe /S"
-
-.\add_path.ps1 "C:\Program Files\7-Zip"
+Invoke-Expression "$temp_dir/7zinstaller.exe /S"
