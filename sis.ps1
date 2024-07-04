@@ -7,6 +7,12 @@ if (-not (Test-Path $env:DATA_DIR)) {
     mkdir $env:DATA_DIR
 }
 
+if (-not (Test-Path .\settings.json)) {
+    Copy-Item .\settings.json.example .\settings.json
+}
+
+$jsonData = (Get-Content .\settings.json | ConvertFrom-Json)
+
 # プロキシ設定
 # .\proxy.ps1
 
@@ -14,10 +20,10 @@ if (-not (Test-Path $env:DATA_DIR)) {
 .\7zip.ps1
 
 # # タスクバー位置
-.\taskber.ps1
+.\taskbar.ps1 $jsonData.taskbar.flag
 
 # # デスクトップ変更
-# .\desktop.ps1
+.\desktop.ps1 $jsonData.desktop.flag $jsonData.desktop.image_path
 
 # # VSCode設定
 # .\vscode.ps1

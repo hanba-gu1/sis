@@ -5,7 +5,9 @@ if (-not (Test-Path $temp_dir)) {
     mkdir $temp_dir
 }
 
-$ProgressPreference = 'SilentlyContinue'
-Invoke-WebRequest $install_link -OutFile "$temp_dir/7zinstaller.exe"
+$installer_path = "$temp_dir/7zinstaller.exe";
 
-Invoke-Expression "$temp_dir/7zinstaller.exe /S"
+$ProgressPreference = 'SilentlyContinue'
+Invoke-WebRequest $install_link -OutFile $installer_path
+
+Invoke-Expression "$installer_path /S"

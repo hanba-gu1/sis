@@ -3,11 +3,8 @@
 		"flag": false,
 		"setting_path": "C:/Users/user/Downloads/sis_temp/proxy"
 	},
-	"szip": {
-		"installer_move_path": "C:/Users/user/Downloads/sis_temp/7zip"
-	},
-	"taskber": {
-		"position": 1
+	"taskbar": {
+		"flag": true
 	},
 	"desktop": {
 		"flag": false,
