@@ -1,27 +1,14 @@
-$jsonData = (Get-Content "U:\SiS\setting.json" | ConvertFrom-Json)
-if(-not $jsonData.vscode.flag){ exit 0 }
-$vscode = $jsonData.vscode
+Param([bool]$flag)
+if (-not $flag) { exit 0 }
 
-if (!(Test-Path $vscode.datadir_path)) {
-	New-Item $vscode.datadir_path -ItemType Directory
+$tempdir = "$env:TEMP_DIR\vscode"
+$datadir = "$env:DATA_DIR\vscode"
+
+if (!(Test-Path $tempdir)) {
+	New-Item $tempdir -ItemType Directory
+}
+if (!(Test-Path $datadir)) {
+	New-Item $datadir -ItemType Directory
 }
 
-if($vscode.auto_install) {
-	New-Item $vscode.installer_path -ItemType Directory
-	$ProgressPreference = 'SilentlyContinue'
-	Invoke-WebRequest "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user" -OutFile "$($vscode.installer_path)/vscode-installer.exe"
-
-	Invoke-Expression "$($vscode.installer_path)/vscode-installer.exe /SILENT /MERGETASKS=!runcode"
-}
-
-$wsh=New-Object -ComObject Wscript.Shell
-$sc=$wsh.CreateShortCut("C:\Users\user\Desktop\SiS VSCode.lnk")
-if($vscode.auto_install) {
-	$sc.TargetPath="C:\Users\user\AppData\Local\Programs\Microsoft VS Code\bin\code.cmd"
-}
-else {
-	$sc.TargetPath="C:\Program Files\Microsoft VS Code\bin\code.cmd"
-}
-$sc.Arguments="--lang ja --extensions-dir $($vscode.datadir_path)\extensions --user-data-dir $($vscode.datadir_path)\user-data"
-$sc.IconLocation = "C:\Program Files\Microsoft VS Code\Code.exe"
-$sc.save()
+Start-Process powershell -Args ".\vscode-install.ps1 $tempdir $datadir"

@@ -26,7 +26,7 @@ $jsonData = (Get-Content .\settings.json | ConvertFrom-Json)
 .\desktop.ps1 $jsonData.desktop.flag $jsonData.desktop.image_path
 
 # # VSCode設定
-# .\vscode.ps1
+.\vscode.ps1 $jsonData.vscode.flag
 
 # # GoogleChrome設定
 # .\googlechrome.ps1

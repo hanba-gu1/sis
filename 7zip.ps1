@@ -10,4 +10,4 @@ $installer_path = "$temp_dir/7zinstaller.exe";
 $ProgressPreference = 'SilentlyContinue'
 Invoke-WebRequest $install_link -OutFile $installer_path
 
-Invoke-Expression "$installer_path /S"
+Start-Process $installer_path -Args "/S" -Wait
