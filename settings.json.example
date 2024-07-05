@@ -11,10 +11,7 @@
 		"image_path": ""
 	},
 	"vscode": {
-		"flag": false,
-		"auto_install": true,
-		"installer_path": "C:/Users/user/Downloads/sis_temp/VSCode",
-		"datadir_path": "U:/SiS_data/VSCode"
+		"flag": false
 	},
 	"googlechrome": {
 		"flag": false,
