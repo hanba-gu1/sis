@@ -29,7 +29,7 @@ $jsonData = (Get-Content .\settings.json | ConvertFrom-Json)
 .\vscode.ps1 $jsonData.vscode.flag
 
 # # GoogleChrome設定
-# .\googlechrome.ps1
+.\chrome.ps1 $jsonData.chrome.flag
 
 # # GCCインストール
 # .\gcc.ps1

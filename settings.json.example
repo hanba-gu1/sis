@@ -13,10 +13,8 @@
 	"vscode": {
 		"flag": false
 	},
-	"googlechrome": {
-		"flag": false,
-		"datadir_path": "U:/SiS_data/GoogleChrome",
-		"cachedir_path": "C:/Users/user/Downloads/sis_temp/GoogleChrome"
+	"chrome": {
+		"flag": false
 	},
 	"gcc": {
 		"flag": false,
