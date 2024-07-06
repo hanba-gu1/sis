@@ -24,6 +24,9 @@ $shortcut_path = "$([System.Environment]::GetFolderPath("Desktop"))\SiS Google C
 if(Test-Path $default_shortcut){
 	Remove-item $default_shortcut
 }
+if(Test-Path $shortcut_path){
+	Remove-item $shortcut_path
+}
 
 foreach ($bin_path in $bin_paths){
     if (Test-Path $bin_path){
