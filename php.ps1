@@ -1,8 +1,8 @@
-$jsonData = (Get-Content "U:\SiS\setting.json" | ConvertFrom-Json)
-if(-not $jsonData.php.flag){ exit 0; }
-$path = $jsonData.php.path
+Param([bool]$flag)
+if (-not $flag) { exit 0 }
 
-New-Item $path -ItemType Directory
+$tempdir = "$env:TEMP_DIR\php"
+
 
 C:\PROGRA~1\7-Zip\7z.exe x U:\SiS\php\php-8.3.3-Win32-vs16-x64.zip -o"$($path)"
 
