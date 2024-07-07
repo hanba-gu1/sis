@@ -17,8 +17,7 @@
 		"flag": false
 	},
 	"gcc": {
-		"flag": false,
-		"compiler_path": "C:/Users/user/Downloads/sis_temp/GCC"
+		"flag": false
 	},
 	"git": {
 		"flag": false,

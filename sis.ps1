@@ -32,7 +32,7 @@ $jsonData = (Get-Content .\settings.json | ConvertFrom-Json)
 .\chrome.ps1 $jsonData.chrome.flag
 
 # # GCCインストール
-# .\gcc.ps1
+.\gcc.ps1 $jsonData.gcc.flag
 
 # # Gitインストール
 # .\git.ps1

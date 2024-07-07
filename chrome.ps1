@@ -1,4 +1,4 @@
-Param([string]$flag)
+Param([bool]$flag)
 if(-not $flag){ exit 0 }
 
 $tempdir = "$env:TEMP_DIR\chrome"
