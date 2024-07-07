@@ -35,7 +35,7 @@ $jsonData = (Get-Content .\settings.json | ConvertFrom-Json)
 .\gcc.ps1 $jsonData.gcc.flag
 
 # # Gitインストール
-# .\git.ps1
+.\git.ps1 $jsonData.git.flag
 
 # # PHPインストール
 # .\php.ps1
