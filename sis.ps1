@@ -38,7 +38,7 @@ $jsonData = (Get-Content .\settings.json | ConvertFrom-Json)
 .\git.ps1 $jsonData.git.flag $jsonData git.username $jsonData.git.mail
 
 # # PHPインストール
-# .\php.ps1
+.\php.ps1 $jsonData.php.flag
 
 # # Pythonインストール
 # .\python.ps1
