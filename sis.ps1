@@ -19,25 +19,25 @@ $jsonData = (Get-Content .\settings.json | ConvertFrom-Json)
 # 7zipインストール
 .\7zip.ps1
 
-# # タスクバー位置
+# タスクバー位置
 .\taskbar.ps1 $jsonData.taskbar.flag
 
-# # デスクトップ変更
+# デスクトップ変更
 .\desktop.ps1 $jsonData.desktop.flag $jsonData.desktop.image_path
 
-# # VSCode設定
+# VSCode設定
 .\vscode.ps1 $jsonData.vscode.flag
 
-# # GoogleChrome設定
+# GoogleChrome設定
 .\chrome.ps1 $jsonData.chrome.flag
 
-# # GCCインストール
+# GCCインストール
 .\gcc.ps1 $jsonData.gcc.flag
 
-# # Gitインストール
+# Gitインストール
 .\git.ps1 $jsonData.git.flag $jsonData git.username $jsonData.git.mail
 
-# # PHPインストール
+# PHPインストール
 .\php.ps1 $jsonData.php.flag
 
 # # Pythonインストール
