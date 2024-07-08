@@ -1,4 +1,8 @@
-./config.ps1
+.\config.ps1
+
+if (Test-Path .\local.ps1) {
+    .\local.ps1
+}
 
 if (-not (Test-Path $env:TEMP_DIR)) {
     mkdir $env:TEMP_DIR
