@@ -1,12 +1,12 @@
-$jsonData = (Get-Content "U:\SiS\setting.json" | ConvertFrom-Json)
-$proxy = $jsonData.proxy
+$proxyUser = Read-Host "t + MS account number"
+$proxyPassword = Read-Host "password"
+$proxyhost = "10.1.100.111:8080"
+$http_proxy = "http://$($proxyUser):$($proxyPassword)@$($proxyhost)"
 
-if(!$proxy.flag) { exit 0 }
+[System.Environment]::SetEnvironmentVariable("http_proxy", $http_proxy, "User")
+$env:http_proxy = $http_proxy
 
-New-Item $proxy.setting_path -ItemType Directory
-Copy-Item U:\SiS_data\proxy\proxy.json $proxy.setting_path -Force
+.\proxy\psprofile.ps1
 
-New-Item (Split-Path $profile -parent) -ItemType Directory
+mkdir (Split-Path $profile -parent)
 Copy-Item U:\SiS\proxy\psprofile.ps1 $profile -Force
-
-./proxy/psprofile.ps1

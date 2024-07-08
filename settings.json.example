@@ -20,10 +20,7 @@
 		"flag": false
 	},
 	"git": {
-		"flag": false,
-		"installer_move_path": "C:/Users/user/Downloads/sis_temp/git",
-		"username": "",
-		"email": ""
+		"flag": false
 	},
 	"php": {
 		"flag": false,
