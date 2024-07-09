@@ -1,4 +1,7 @@
-﻿$datadir = "$env:DATA_DIR\proxy"
+﻿Param([bool]$flag)
+if (-not $flag) { exit 0 }
+
+$datadir = "$env:DATA_DIR\proxy"
 if (-not (Test-Path $datadir)) {
     mkdir $datadir
     .\proxy\set-proxy.ps1 $datadir

@@ -17,7 +17,7 @@ if (-not (Test-Path .\settings.json)) {
 $jsonData = (Get-Content .\settings.json | ConvertFrom-Json)
 
 # プロキシ設定
-.\proxy.ps1
+.\proxy.ps1 $jsonData.proxy.flag
 
 # 7zipインストール
 .\7zip.ps1

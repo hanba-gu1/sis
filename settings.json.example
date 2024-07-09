@@ -1,9 +1,9 @@
 {
 	"proxy": {
-		"flag": false
+		"flag": true
 	},
 	"taskbar": {
-		"flag": true
+		"flag": false
 	},
 	"desktop": {
 		"flag": false,
