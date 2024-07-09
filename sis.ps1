@@ -43,8 +43,8 @@ $jsonData = (Get-Content .\settings.json | ConvertFrom-Json)
 # PHPインストール
 .\php.ps1 $jsonData.php.flag
 
-# # Pythonインストール
-# .\python.ps1
+# Pythonインストール
+.\python.ps1 $jsonData.python.flag
 
 # # Node.jsインストール
 # .\nodejs.ps1
