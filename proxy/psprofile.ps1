@@ -1,16 +1,15 @@
-$proxy = (Get-Content "C:/Users/user/Downloads/sis_temp/proxy/proxy.json" | ConvertFrom-Json)
+$username = Get-Content "~\sis-proxy\username.txt"
+$encryptedPassword = Get-Content "~\sis-proxy\password.txt"
+$key = Get-Content "~\sis-proxy\key.bin" -Encoding Byte
 
-[byte[]] $EncryptedKey = @((Get-Random -SetSeed $proxy.tsnumber) % 256)
-for ($i = 1; $i -lt 24; $i++) {
-	$EncryptedKey += (Get-Random) % 256
-}
-$SecureString = (ConvertTo-SecureString -key $EncryptedKey -String ($proxy.encrypted_password))
-$bstr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($SecureString)
-$StringPassword = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($bstr)
+$securePassword = $encryptedPassword | ConvertTo-SecureString -Key $key
+$bstr = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePassword)
+$password = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($bstr)
+[System.Runtime.InteropServices.Marshal]::ZeroFreeBSTR($bstr)
 
 # 個別の認証情報
-$proxyUser = "ts" + $proxy.tsnumber
-$proxyPassword = $StringPassword
+$proxyUser = $username
+$proxyPassword = $password
 $proxyhost = "10.1.100.111:8080"
 
 # 環境変数

@@ -1,0 +1,35 @@
+{
+	"proxy": {
+		"flag": true
+	},
+	"taskbar": {
+		"flag": false
+	},
+	"desktop": {
+		"flag": false,
+		"image_path": ""
+	},
+	"vscode": {
+		"flag": false
+	},
+	"chrome": {
+		"flag": false
+	},
+	"gcc": {
+		"flag": false
+	},
+	"git": {
+		"flag": false,
+		"username": "",
+		"email": ""
+	},
+	"php": {
+		"flag": false
+	},
+	"python": {
+		"flag": false
+	},
+	"nodejs": {
+		"flag": false
+	}
+}

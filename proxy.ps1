@@ -1,12 +1,19 @@
-$jsonData = (Get-Content "U:\SiS\setting.json" | ConvertFrom-Json)
-$proxy = $jsonData.proxy
+﻿Param([bool]$flag)
+if (-not $flag) { exit 0 }
 
-if(!$proxy.flag) { exit 0 }
+$datadir = "$env:DATA_DIR\proxy"
+if (-not (Test-Path $datadir)) {
+    mkdir $datadir
+    .\proxy\set-proxy.ps1 $datadir
+}
+if (-not (Test-Path "~\sis-proxy")) {
+    mkdir "~\sis-proxy"
+}
+Copy-Item "$datadir\username.txt" "~\sis-proxy\username.txt" -Force
+Copy-Item "$datadir\password.txt" "~\sis-proxy\password.txt" -Force
+Copy-Item "$datadir\key.bin" "~\sis-proxy\key.bin" -Force
 
-New-Item $proxy.setting_path -ItemType Directory
-Copy-Item U:\SiS_data\proxy\proxy.json $proxy.setting_path -Force
+.\proxy\psprofile.ps1
 
-New-Item (Split-Path $profile -parent) -ItemType Directory
-Copy-Item U:\SiS\proxy\psprofile.ps1 $profile -Force
-
-./proxy/psprofile.ps1
+mkdir (Split-Path $profile -parent)
+Copy-Item .\proxy\psprofile.ps1 $profile -Force
