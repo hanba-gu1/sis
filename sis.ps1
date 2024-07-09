@@ -1,5 +1,4 @@
-.\config.ps1
-
+﻿.\config.ps1
 if (Test-Path .\local.ps1) {
     .\local.ps1
 }

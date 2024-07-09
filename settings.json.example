@@ -1,7 +1,6 @@
 {
 	"proxy": {
-		"flag": false,
-		"setting_path": "C:/Users/user/Downloads/sis_temp/proxy"
+		"flag": false
 	},
 	"taskbar": {
 		"flag": true
@@ -20,11 +19,12 @@
 		"flag": false
 	},
 	"git": {
-		"flag": false
+		"flag": false,
+		"username": "",
+		"email": ""
 	},
 	"php": {
-		"flag": false,
-		"path": "C:/Users/user/Downloads/sis_temp/php"
+		"flag": false
 	},
 	"python": {
 		"flag": false

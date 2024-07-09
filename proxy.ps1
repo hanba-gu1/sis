@@ -1,12 +1,16 @@
-$proxyUser = Read-Host "t + MS account number"
-$proxyPassword = Read-Host "password"
-$proxyhost = "10.1.100.111:8080"
-$http_proxy = "http://$($proxyUser):$($proxyPassword)@$($proxyhost)"
-
-[System.Environment]::SetEnvironmentVariable("http_proxy", $http_proxy, "User")
-$env:http_proxy = $http_proxy
+﻿$datadir = "$env:DATA_DIR\proxy"
+if (-not (Test-Path $datadir)) {
+    mkdir $datadir
+    .\proxy\set-proxy.ps1 $datadir
+}
+if (-not (Test-Path "~\sis-proxy")) {
+    mkdir "~\sis-proxy"
+}
+Copy-Item "$datadir\username.txt" "~\sis-proxy\username.txt" -Force
+Copy-Item "$datadir\password.txt" "~\sis-proxy\password.txt" -Force
+Copy-Item "$datadir\key.bin" "~\sis-proxy\key.bin" -Force
 
 .\proxy\psprofile.ps1
 
 mkdir (Split-Path $profile -parent)
-Copy-Item U:\SiS\proxy\psprofile.ps1 $profile -Force
+Copy-Item .\proxy\psprofile.ps1 $profile -Force
