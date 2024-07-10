@@ -20,4 +20,3 @@ Add-Type -AssemblyName System.Web
 
 C:\PROGRA~1\Git\cmd\git.exe config --global user.name $username
 C:\PROGRA~1\Git\cmd\git.exe config --global user.mail $email
-C:\PROGRA~1\Git\cmd\git.exe config --global http.proxy [System.Web.HttpUtility]::UrlEncode($env:HTTP_PROXY)
