@@ -5,7 +5,10 @@
 
 [ここ](https://gitforwindows.org/)からインストールできます。
 
-インストールできたら、コマンドプロンプトを開いて`git clone https://github.com/hanba-gu1/sis U:\sis`を実行してください。
+インストールできたら、コマンドプロンプトを開いて`git config --global http.proxy http://{username}:{password}@10.1.100.111:8080`を実行してください。<br>
+{username}と{password}は学校PCにログインするときのユーザー名とパスワードです。パスワードに記号が含まれる場合は[このサイト](https://tech-unlimited.com/urlencode.html)等でURLエンコードしてから入力してください。
+
+更に、`git clone https://github.com/hanba-gu1/sis U:\sis`を実行してください。
 
 するとhomesに`sis`フォルダができているので、その中に`settings.json`ファイルを作り、`settings.json.example`の内容をコピーしてください。
 
