@@ -16,5 +16,8 @@ Invoke-WebRequest $exe_link -OutFile Git-2.36.1-64-bit.exe
 .\install-git.ps1
 .\set-git-path.ps1
 
+Add-Type -AssemblyName System.Web
+
 C:\PROGRA~1\Git\cmd\git.exe config --global user.name $username
 C:\PROGRA~1\Git\cmd\git.exe config --global user.mail $email
+C:\PROGRA~1\Git\cmd\git.exe config --global http.proxy [System.Web.HttpUtility]::UrlEncode($env:HTTP_PROXY)
