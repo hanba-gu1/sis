@@ -38,7 +38,7 @@ $jsonData = (Get-Content .\settings.json | ConvertFrom-Json)
 .\gcc.ps1 $jsonData.gcc.flag
 
 # Gitインストール
-.\git.ps1 $jsonData.git.flag $jsonData.git.username $jsonData.git.mail
+.\git.ps1 $jsonData.git.flag $jsonData.git.username $jsonData.git.email
 
 # PHPインストール
 .\php.ps1 $jsonData.php.flag
