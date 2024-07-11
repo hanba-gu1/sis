@@ -35,3 +35,5 @@ $proxyPassword = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR($bstr
 $proxy = "http://$($proxyUser):$([System.Web.HttpUtility]::UrlEncode($proxyPassword))@10.1.100.111:8080"
 
 C:\PROGRA~1\Git\cmd\git.exe config --global http.proxy $proxy
+
+C:\PROGRA~1\Git\cmd\git.exe config --global safe.directory *
