@@ -19,7 +19,7 @@ Invoke-WebRequest $exe_link -OutFile Git-2.36.1-64-bit.exe
 Add-Type -AssemblyName System.Web
 
 C:\PROGRA~1\Git\cmd\git.exe config --global user.name $username
-C:\PROGRA~1\Git\cmd\git.exe config --global user.mail $email
+C:\PROGRA~1\Git\cmd\git.exe config --global user.email $email
 
 Add-Type -AssemblyName System.Web
 
