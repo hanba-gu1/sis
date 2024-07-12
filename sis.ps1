@@ -37,9 +37,6 @@ $jsonData = (Get-Content .\settings.json | ConvertFrom-Json)
 # GCCインストール
 .\gcc.ps1 $jsonData.gcc.flag
 
-# Gitインストール
-.\git.ps1 $jsonData.git.flag $jsonData.git.username $jsonData.git.email
-
 # PHPインストール
 .\php.ps1 $jsonData.php.flag
 
@@ -48,3 +45,6 @@ $jsonData = (Get-Content .\settings.json | ConvertFrom-Json)
 
 # Node.jsインストール
 .\nodejs.ps1 $jsonData.nodejs.flag
+
+# Gitインストール
+.\git.ps1 $jsonData.git.flag $jsonData.git.username $jsonData.git.email $jsonData.git.sis_auto_update
