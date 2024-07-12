@@ -18,11 +18,6 @@
 	"gcc": {
 		"flag": false
 	},
-	"git": {
-		"flag": false,
-		"username": "",
-		"email": ""
-	},
 	"php": {
 		"flag": false
 	},
@@ -31,5 +26,11 @@
 	},
 	"nodejs": {
 		"flag": false
+	},
+	"git": {
+		"flag": true,
+		"username": "",
+		"email": "",
+		"sis_auto_update": true
 	}
 }
