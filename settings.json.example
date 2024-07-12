@@ -5,6 +5,9 @@
 	"taskbar": {
 		"flag": false
 	},
+	"explorer_patcher": {
+		"flag": false
+	},
 	"desktop": {
 		"flag": false,
 		"image_path": ""
