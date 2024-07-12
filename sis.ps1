@@ -25,6 +25,9 @@ $jsonData = (Get-Content .\settings.json | ConvertFrom-Json)
 # タスクバー位置
 .\taskbar.ps1 $jsonData.taskbar.flag
 
+# Explorer Patcher
+.\explorer-patcher.ps1 $jsonData.explorer_patcher.flag
+
 # デスクトップ変更
 .\desktop.ps1 $jsonData.desktop.flag $jsonData.desktop.image_path
 
