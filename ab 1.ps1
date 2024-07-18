@@ -1,0 +1,2 @@
+Param($a)
+echo $a
