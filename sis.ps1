@@ -49,5 +49,8 @@ $jsonData = (Get-Content .\settings.json | ConvertFrom-Json)
 # Node.jsインストール
 .\nodejs.ps1 $jsonData.nodejs.flag
 
+# Rustインストール
+.\rust.ps1 $jsonData.rust.flag
+
 # Gitインストール
 .\git.ps1 $jsonData.git.flag $jsonData.git.username $jsonData.git.email $jsonData.git.sis_auto_update

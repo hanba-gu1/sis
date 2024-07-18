@@ -30,6 +30,9 @@
 	"nodejs": {
 		"flag": false
 	},
+	"rust": {
+		"flag": false
+	},
 	"git": {
 		"flag": true,
 		"username": "",
