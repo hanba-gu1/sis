@@ -1,4 +1,4 @@
-$username = Get-Content "~\sis-proxy\username.txt"
+﻿$username = Get-Content "~\sis-proxy\username.txt"
 $encryptedPassword = Get-Content "~\sis-proxy\password.txt"
 $key = Get-Content "~\sis-proxy\key.bin" -Encoding Byte
 
